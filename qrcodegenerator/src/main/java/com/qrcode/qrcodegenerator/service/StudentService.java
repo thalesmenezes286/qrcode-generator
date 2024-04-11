@@ -17,12 +17,14 @@ public class StudentService {
     public List<Student> getStudents(){
         return studentRepository.findAll();
     }
+
     public Student addStudent(Student student){
         return studentRepository.save(student);
     }
 
     public Student findById(Long id){
-        return studentRepository.findById(id)
+        return studentRepository
+                .findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found"));
     }
 }
