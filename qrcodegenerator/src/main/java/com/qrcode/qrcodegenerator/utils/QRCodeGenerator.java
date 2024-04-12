@@ -12,11 +12,10 @@ import com.qrcode.qrcodegenerator.model.Student;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-
 public class QRCodeGenerator {
 
     public static void generateQRCode(Student student) throws WriterException, IOException {
-        String qrCodePath = "D:\\blog-posts\\QRCode\\";
+        String qrCodePath = "C:\\blog-posts\\QRCode\\";
         String qrCodeName = qrCodePath+student.getFirstName()+student.getId()+"-QRCODE.png";
         var qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(

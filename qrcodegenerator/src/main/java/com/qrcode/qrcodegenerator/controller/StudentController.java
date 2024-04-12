@@ -20,12 +20,15 @@ public class StudentController {
 
     @GetMapping
     public ResponseEntity<List<Student>> getStudents() throws IOException, WriterException {
+
         List<Student> students = studentService.getStudents();
+
         if (students.size() != 0){
             for (Student student : students){
                 QRCodeGenerator.generateQRCode(student);
             }
         }
+
         return ResponseEntity.ok(studentService.getStudents());
     }
 
